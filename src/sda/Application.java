@@ -43,6 +43,7 @@ public class Application {
                 .forEach(e -> System.out.println(e));
         System.out.println();
 
+        //za pomoca filter oraz collect zebrac wszystkie osoby
         List<AbstractEmployee> javaEmployees = employeeList.stream()
                 .filter(e -> e.getDepartment().equals("Java"))
                 .collect(Collectors.toList());
@@ -71,9 +72,10 @@ public class Application {
                 .forEach(e -> System.out.println(e));
         System.out.println();
 
-
         //10. Posortuj po salary
-        employeeList.sort((e1, e2) -> e1.getSalary() > e2.getSalary() ? 1 : -1);
+        employeeList.sort((e1, e2) ->
+                e1.getSalary() > e2.getSalary() ? 1 :
+                        e1.getSalary() == e2.getSalary() ? 0 : -1);
         employeeList.forEach(e -> System.out.println(e.getFirstName() + ": " + e.getSalary()));
         System.out.println();
 

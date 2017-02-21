@@ -100,8 +100,6 @@ public class Application {
                             .filter(e1 -> e1.getSalary() > 3000)
                             .forEach(e1 -> tmpList.add(e1));
                 });
-
-
     }
 
     public static Map<String, List<AbstractEmployee>> listToMAp(List<AbstractEmployee> employees) {
